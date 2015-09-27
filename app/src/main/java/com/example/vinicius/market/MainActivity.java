@@ -1,6 +1,5 @@
 package com.example.vinicius.market;
 
-import android.app.Activity;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 
-import com.example.vinicius.market.fragments.Market;
-import com.example.vinicius.market.fragments.Master;
+import com.example.vinicius.market.fragments.MarketFragment;
+import com.example.vinicius.market.fragments.MasterFragment;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity{
         setupDrawerContent(nvDrawer);
 
         // Insert the fragment by replacing any existing fragment
-        Fragment fragment = new Master();
+        Fragment fragment = new MasterFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
     }
@@ -69,7 +68,7 @@ public class MainActivity extends AppCompatActivity{
         switch(menuItem.getItemId()) {
 
             case R.id.nav_first_fragment:
-                fragmentClass = Market.class;
+                fragmentClass = MarketFragment.class;
                 break;
             /*
             case R.id.nav_second_fragment:
@@ -80,7 +79,7 @@ public class MainActivity extends AppCompatActivity{
                 break;
                 */
             default:
-                fragmentClass = Master.class;
+                fragmentClass = MasterFragment.class;
         }
 
         try {

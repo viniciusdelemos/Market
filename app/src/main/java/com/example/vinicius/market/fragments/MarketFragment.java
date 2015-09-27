@@ -8,12 +8,9 @@ import android.view.ViewGroup;
 
 import com.example.vinicius.market.R;
 
-/**
- * Created by Vinicius on 27/09/2015.
- */
-public class Market extends Fragment {
+public class MarketFragment extends Fragment {
 
-    public Market()
+    public MarketFragment()
     {
     }
     @Override

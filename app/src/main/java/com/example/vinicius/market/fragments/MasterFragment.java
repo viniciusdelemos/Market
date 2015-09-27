@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 
 import com.example.vinicius.market.R;
 
-public class Master extends Fragment {
+public class MasterFragment extends Fragment {
 
-    public Master()
+    public MasterFragment()
     {
     }
     @Override
