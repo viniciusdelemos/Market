@@ -12,6 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 
+import com.example.vinicius.market.fragments.Market;
+import com.example.vinicius.market.fragments.Master;
+
 public class MainActivity extends AppCompatActivity{
 
     private DrawerLayout mDrawer;
@@ -39,6 +42,11 @@ public class MainActivity extends AppCompatActivity{
         NavigationView nvDrawer = (NavigationView) findViewById(R.id.nvView);
         // Setup drawer view
         setupDrawerContent(nvDrawer);
+
+        // Insert the fragment by replacing any existing fragment
+        Fragment fragment = new Master();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -59,10 +67,11 @@ public class MainActivity extends AppCompatActivity{
 
         Class fragmentClass;
         switch(menuItem.getItemId()) {
-            /*
+
             case R.id.nav_first_fragment:
-                fragmentClass = FirstFragment.class;
+                fragmentClass = Market.class;
                 break;
+            /*
             case R.id.nav_second_fragment:
                 fragmentClass = SecondFragment.class;
                 break;
@@ -71,7 +80,7 @@ public class MainActivity extends AppCompatActivity{
                 break;
                 */
             default:
-                fragmentClass = Market.class;
+                fragmentClass = Master.class;
         }
 
         try {
